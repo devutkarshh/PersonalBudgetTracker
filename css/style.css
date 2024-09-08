@@ -1,0 +1,199 @@
+/* General body styling - synced with the login/signup background */
+body {
+	font-family: Arial, sans-serif;
+	/* Gradient background */
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.main {
+	min-height: 100vh;
+	max-height: 100vh;
+	overflow: hidden;
+	background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+/* Styling the container */
+.container {
+	max-width: 800px;
+	margin: 50px auto;
+	padding: 30px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	animation: fadeIn 1s ease-in-out;
+	/* Adding fade-in animation to container */
+}
+
+/* Title styling */
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #333;
+	font-size: 28px;
+	font-weight: bold;
+	animation: slideDown 0.8s ease;
+	/* Adding slide down animation for the title */
+}
+
+/* Form styling */
+form {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+}
+
+form input,
+form select,
+form button {
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 16px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	/* Adding smooth transitions */
+}
+
+/* Hover effect for input and select */
+form input:hover,
+form select:hover {
+	transform: scale(1.02);
+	/* Slight zoom on hover */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+form button {
+	background-color: #28a745;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	transition: background-color 0.3s, transform 0.3s ease;
+}
+
+/* Button hover effects */
+form button:hover {
+	background-color: #218838;
+	transform: translateY(-2px);
+	/* Slight lift on hover */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Table styling */
+.expense-table table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+	animation: fadeIn 1.2s ease;
+	/* Fade in effect for the table */
+}
+
+.expense-table th,
+.expense-table td {
+	padding: 12px;
+	border: 1px solid #ddd;
+	text-align: left;
+}
+
+.expense-table th {
+	background-color: #f8f8f8;
+	font-weight: bold;
+	color: #555;
+}
+
+/* Total amount styling */
+.total-amount {
+	text-align: right;
+	font-size: 20px;
+	font-weight: bold;
+	animation: slideUp 0.8s ease;
+	/* Slide-up animation for the total amount */
+}
+
+/* Filter section styling */
+.filter {
+	margin-bottom: 20px;
+	text-align: right;
+}
+
+.filter label {
+	margin-right: 10px;
+}
+
+.filter select {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 14px;
+	transition: box-shadow 0.3s ease;
+}
+
+.filter select:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logout button in top-right corner */
+.top-right {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 1000;
+}
+
+.top-right button {
+	padding: 12px 20px;
+	background-color: #ff5c5c;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.top-right button:hover {
+	background-color: #ff3b3b;
+	transform: translateY(-2px);
+	/* Slight lift effect */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
