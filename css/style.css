@@ -10,6 +10,7 @@ body {
 .main {
 	min-height: 100vh;
 	max-height: 100vh;
+	display: flex;
 	overflow: hidden;
 	background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
@@ -23,7 +24,13 @@ body {
 	border-radius: 10px;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 	animation: fadeIn 1s ease-in-out;
+	overflow-y: scroll;
+	max-height: 80vh;
 	/* Adding fade-in animation to container */
+}
+
+::-webkit-scrollbar {
+	width: 2px;
 }
 
 /* Title styling */
@@ -36,6 +43,20 @@ h1 {
 	animation: slideDown 0.8s ease;
 	/* Adding slide down animation for the title */
 }
+
+.chart-container {
+	position: relative;
+	height: 400px;
+	/* Adjust as needed */
+	width: 100%;
+	/* Full width */
+}
+
+canvas {
+	width: 100% !important;
+	height: 100% !important;
+}
+
 
 /* Form styling */
 form {
@@ -139,9 +160,8 @@ form button:hover {
 /* Logout button in top-right corner */
 .top-right {
 	position: fixed;
-	top: 10px;
-	right: 10px;
-	z-index: 1000;
+	top: 5%;
+	right: 2.5%;
 }
 
 .top-right button {

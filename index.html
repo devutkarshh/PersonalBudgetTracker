@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Expense Tracker</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script>
 		// This runs immediately when the page loads
 		document.addEventListener('DOMContentLoaded', function () {
@@ -40,6 +41,7 @@
 				<input type="date" id="expense-date" required />
 				<button type="submit">Add Expense</button>
 			</form>
+
 			<div class="expense-table">
 				<table>
 					<thead>
@@ -53,10 +55,12 @@
 					</thead>
 					<tbody id="expense-list"></tbody>
 				</table>
+
 				<div class="total-amount">
 					<strong>Total:</strong> ₹<span id="total-amount">0</span>
 				</div>
 			</div>
+
 			<div class="filter">
 				<label for="filter-category">Filter by Category:</label>
 				<select id="filter-category">
@@ -67,8 +71,13 @@
 					<option value="Other">Other</option>
 				</select>
 			</div>
+
+			<div class="chart-container">
+				<canvas id="expenseChart"></canvas>
+			</div>
 		</div>
 	</div>
+
 	<script src="./scripts/script.js"></script>
 </body>
 
