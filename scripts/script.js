@@ -83,11 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			const row = document.createElement("tr");
 
 			row.innerHTML = `
-                <td>${expense.name}</td>
-                <td>₹${expense.amount.toFixed(2)}</td>
-                <td>${expense.category}</td>
-                <td>${expense.date}</td>
-                <td>
+                <td style="text-align: center;">${expense.name}</td>
+                <td style="text-align: center;">₹${expense.amount.toFixed(2)}</td>
+                <td style="text-align: center;">${expense.category}</td>
+                <td style="text-align: center;">${expense.date}</td>
+                <td style="text-align: center;">
                     <button class="edit-btn" data-id="${expense.id}">Edit</button>
                     <button class="delete-btn" data-id="${expense.id}">Delete</button>
                 </td>

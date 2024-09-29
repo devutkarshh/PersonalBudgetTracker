@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Expense Tracker - Calculate</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+		// This runs immediately when the page loads
+		document.addEventListener('DOMContentLoaded', function () {
+			const loggedInUser = localStorage.getItem('loggedInUser');
+			const signedUpUsers = Object.keys(localStorage).filter(key => key !== 'loggedInUser');
+
+			// If no user is logged in or no users have signed up, redirect to signup page
+			if (!loggedInUser || signedUpUsers.length === 0) {
+				window.location.href = 'signup.html';
+			}
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+
+<body>
+	<div class="main">
+		<div class="top-right">
+			<button id="logoutBtn">Logout</button>
+		</div>
+		<div class="container">
+			<h1 class="prose">Expense Tracker</h1>
+			<form id="expense-form">
+				<input type="text" id="expense-name" placeholder="Expense Name" required />
+				<input type="number" id="expense-amount" placeholder="Amount" required />
+				<select id="expense-category" required>
+					<option value="" disabled selected>Select Category</option>
+					<option value="Food">Food</option>
+					<option value="Transport">Transport</option>
+					<option value="Entertainment">Entertainment</option>
+					<option value="Education">Education</option>
+					<option value="Bill">Bill</option>
+					<option value="Rent">Rent</option>
+					<option value="Insurance">Insurance</option>
+					<option value="Other">Other</option>
+				</select>
+				<input type="date" id="expense-date" required />
+				<button type="submit">Add Expense</button>
+			</form>
+
+			<div class="expense-table">
+				<table>
+					<thead>
+						<tr>
+							<th style="text-align: center;">Expense Name</th>
+							<th style="text-align: center;">Amount</th>
+							<th style="text-align: center;">Category</th>
+							<th style="text-align: center;">Date</th>
+							<th style="text-align: center;">Action</th>
+						</tr>
+					</thead>
+					<tbody id="expense-list"></tbody>
+				</table>
+
+				<div class="total-amount">
+					<strong>Total:</strong> ₹<span id="total-amount">0</span>
+				</div>
+			</div>
+
+			<div class="filter">
+				<label for="filter-category">Filter by Category:</label>
+				<select id="filter-category">
+					<option value="All">All</option>
+					<option value="Food">Food</option>
+					<option value="Transport">Transport</option>
+					<option value="Entertainment">Entertainment</option>
+					<option value="Education">Education</option>
+					<option value="Bill">Bill</option>
+					<option value="Rent">Rent</option>
+					<option value="Insurance">Insurance</option>
+					<option value="Other">Other</option>
+				</select>
+			</div>
+
+			<div class="chart-container">
+				<canvas id="expenseChart"></canvas>
+			</div>
+		</div>
+	</div>
+
+	<script src="./scripts/script.js"></script>
+</body>
+
+</html>
